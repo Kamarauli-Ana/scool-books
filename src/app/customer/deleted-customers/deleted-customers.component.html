@@ -1,0 +1,9 @@
+<mat-list-item *ngFor="let customer of customerService.deletedCustomerdArray; let i = index">
+  <div class="delete-container">
+    {{i + 1}} {{customer.name}} {{customer.surname}} is {{customer.age}}
+    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+    (click)="restoreCustomer(i)">
+      <mat-icon>autorenew</mat-icon>
+    </button>
+  </div>
+  </mat-list-item>

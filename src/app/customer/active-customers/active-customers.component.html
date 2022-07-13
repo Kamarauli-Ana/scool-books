@@ -1,0 +1,12 @@
+
+<mat-list>
+  <mat-list-item *ngFor="let customer of customerService.customersArray; let i = index">
+    <div class="delete-container">
+      {{i + 1}} {{customer.name}} {{customer.surname}} is {{customer.age}}
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click) = "deleteCustomer(i)">
+       <mat-icon>delete</mat-icon>
+     </button>
+    </div>
+    </mat-list-item>
+ </mat-list>
+ <button mat-raised-button color="primary" (click)="resetCustomers()">Reset</button>

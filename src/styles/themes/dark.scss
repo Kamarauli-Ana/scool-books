@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../typography/config" as typography;
+
+$school-books-dark-primary: mat.define-palette(mat.$blue-grey-palette);
+$school-books-dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$school-books-dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$school-books-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $school-books-dark-primary,
+      accent: $school-books-dark-accent,
+      warn: $school-books-dark-warn,
+    ),
+  )
+);
+
+.dark-theme {
+  @include mat.core-color($school-books-dark-theme);
+  @include mat.button-color($school-books-dark-theme);
+}

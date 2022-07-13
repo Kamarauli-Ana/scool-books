@@ -1,0 +1,17 @@
+@use "@angular/material" as mat;
+
+@use "./styles/themes/light";
+@use "./styles/typography/config" as typography;
+
+@include mat.core();
+@include mat.core(typography.$school-books-typography);
+
+@include mat.core-theme(light.$school-books-light-theme);
+@include mat.button-theme(light.$school-books-light-theme);
+
+h1{
+  color:black;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

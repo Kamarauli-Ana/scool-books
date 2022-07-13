@@ -1,0 +1,18 @@
+.delete-container{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mat-fab{
+  width: 42px;
+  height: 42px;
+
+}
+mat-list-item{
+  margin-bottom: 4px;
+}
+:host ::ng-deep .mat-fab .mat-button-wrapper {
+  padding: 10px;
+}

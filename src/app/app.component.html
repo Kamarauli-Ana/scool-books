@@ -1,0 +1,71 @@
+
+
+<button mat-button color="primary" (click)="toggleCustomers()">
+  Load Clients
+</button>
+
+
+  <mat-form-field  class="example-full-width" appearance="fill" *ngIf="isVisible" >
+    <mat-label>Customer Search</mat-label>
+    <input matInput [(ngModel)]="searchField">
+  </mat-form-field>
+
+
+<div *ngIf="isVisible">
+  <h1 appCustom="color">customers</h1>
+  <mat-list>
+    <mat-list-item *ngFor="let customer of customerList | searchCustomer: searchField; let i = index">
+      {{ i + 1 }} {{ customer.name }} {{ customer.surname }} is
+      {{ customer.age }}</mat-list-item
+    >
+  </mat-list>
+</div>
+
+<button mat-button color="primary" (click)="addCustomers()">
+ Add Customers
+</button>
+
+
+
+<div class="container">
+  <app-active-customers></app-active-customers>
+  <app-deleted-customers></app-deleted-customers>
+</div>
+
+<nav>
+  <button type="button" (click)="toggle()">Toggle Open/Close</button>
+</nav>
+
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+</div>
+
+
+<button
+  mat-icon-button
+  (click)="toggleDarkTheme()"
+  class="theme-toggle"
+  aria-label="Toggle Dark Theme"
+>
+  <mat-icon>{{ isDark ? "dark_mode" : "light_mode" }}</mat-icon>
+</button>
+<h2>Buttons</h2>
+
+<button mat-raised-button color="primary">Raised</button>
+<button mat-raised-button color="accent">Accent</button>
+<button mat-raised-button color="warn">Warn</button>
+
+
+
+
+
+
+
+
+<app-post-list></app-post-list>
+
+
+
+
+
+
