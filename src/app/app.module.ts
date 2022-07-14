@@ -13,7 +13,8 @@ import { ActiveCustomersComponent } from './customer/active-customers/active-cus
 import { DeletedCustomersComponent } from './customer/deleted-customers/deleted-customers.component';
 import { CustomerService } from './customer/services/customer.service';
 import { PostListComponent } from './posts/post-list/post-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/auth.interceptor';
 
 
 
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [AppComponent, CustomDirective, SearchCustomerPipe, ActiveCustomersComponent, DeletedCustomersComponent, PostListComponent],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule,FormsModule, HttpClientModule],
   exports:[CustomDirective],
-  providers: [CustomerService],
+  providers: [{provide: CustomerService, useClass: CustomerService},
+              {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

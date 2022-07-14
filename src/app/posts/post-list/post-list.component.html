@@ -1,1 +1,20 @@
-<p>post-list works!</p>
+
+
+<button mat-button color="primary" (click)="toggleComments()">
+  Posts
+</button>
+<div *ngIf="isVisible">
+<ul>
+  <li *ngFor="let post of postsList">
+    <h3>
+      {{ post.title }}
+    </h3>
+    <br />
+    <p>
+      {{ post.body }}
+    </p>
+
+    <button mat-button  (click)="deleteItem(post.id)">Delete Post</button>
+  </li>
+</ul>
+</div>
