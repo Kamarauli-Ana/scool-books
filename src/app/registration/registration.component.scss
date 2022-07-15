@@ -1,0 +1,44 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  // width: 500px;
+  align-items: center;
+  justify-content: center;
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+mat-radio-group,at-form-field{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+mat-radio-button{
+  margin-left: 10px;
+}
+
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}

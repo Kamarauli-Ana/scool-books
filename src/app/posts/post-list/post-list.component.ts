@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { postList } from '../models/posts-response.models';
 import { PostsService } from '../services/posts.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-post-list',
@@ -11,8 +11,10 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class PostListComponent implements OnInit {
    postsList: postList[]=[];
    isVisible: boolean = false;
+   public message = "post deleted successfully";
 
-  constructor( private postsServ:PostsService,private _snackBar: MatSnackBar) { }
+
+  constructor( private postsServ:PostsService) { }
 
   ngOnInit(): void {
     this.postsServ.getPosts().subscribe((data)=>{
@@ -23,7 +25,7 @@ export class PostListComponent implements OnInit {
   }
   deleteItem(id: number){
     this.postsServ.deletePosts(id).subscribe()
-    this._snackBar.open('Post deleted successfully')
+    alert(this.message);
   }
 
   toggleComments(){

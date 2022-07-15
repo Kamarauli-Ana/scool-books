@@ -6,15 +6,6 @@ button{
 
 }
 
-:host ::ng-deep .mat-snack-bar-container .ng-tns-c82-2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  line-height: 20px;
-  opacity: 1;
-  background-color: #c1bbbb;
-  width: 200px;
-  height: 60px;
-  padding-left: 30px;
-  cursor: pointer;
+mat-form-field {
+  margin-right: 12px;
 }
